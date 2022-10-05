@@ -11,7 +11,7 @@ p {
     font-size: 18px;
 }
 
-#name {
+.section__heading {
     color: #C552FF;
 }
 
@@ -39,17 +39,140 @@ nav {
     font-weight: 600;
 }
 
+.nav__link--anchor-primary {
+    background-color: #C552FF;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 40px;
+}
+
+.nav__link--anchor-primary:hover {
+    background-color: #540cc9;
+    transition: 500ms;
+}
+
 li {
     list-style-type: none;
 }
 
-#languages{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+.personal__logo {
+    font-size: 20px;
+    color: #C552FF;
+    font-weight: 1000;
+    margin: 0 12px;
 }
-.language__logo{
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+#about-me {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__me {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about__me--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Picture */
+.about__me--picture {
+    height: 120px;
+    width: 120px;
+    border-radius: 100px;
+    box-shadow: 0 4px 18px black;
+    margin-bottom: 30px;
+}
+
+/* heading1 */
+h1 {
+    font-size: 26px;
+}
+
+.name-heading {
+    margin-bottom: 14px;
+}
+
+/* Introduction paragraph */
+.intro {
+    font-size: 16px;
+}
+
+.about__me--link {
+    font-size: 21px;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+.about__me--imageCont {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.about__me--image {
+    width: 100%;
+}
+
+/* LANGUAGES */
+.languages {
+    width: 25%;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.languages__heading {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.languageContainer {
+    padding: 0 50px;
+}
+
+.language__list {
+    display: flex;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.language__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    padding: 28px 12px;
+}
+
+.language__logo {
+    display: flex;
+    justify-content: center;
     height: 100px;
     width: 100px;
 }
-
