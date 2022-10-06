@@ -11,7 +11,7 @@ p {
     font-size: 18px;
 }
 
-.section__heading {
+.colored__heading {
     color: #C552FF;
 }
 
@@ -116,7 +116,8 @@ h1 {
     font-size: 26px;
 }
 
-.heading {
+.section__heading {
+    font-size: 30px;
     margin-bottom: 16px;
     text-align: center;
 }
@@ -124,6 +125,8 @@ h1 {
 /* Introduction paragraph */
 .intro {
     font-size: 16px;
+    
+    margin: 20px 0;
 }
 
 .about__me--link {
@@ -151,11 +154,15 @@ h1 {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 20px;
 }
 
 .container {
     padding: 50px 0;
+}
+
+.about__me--links {
+    margin-bottom: 60px;
 }
 
 .language__list {
