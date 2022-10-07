@@ -11,8 +11,23 @@ p {
     font-size: 18px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .colored__heading {
     color: #C552FF;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    transition: opacity 350ms ease;
+}
+
+
+a:hover {
+    opacity: 0.6;
 }
 
 /* NAV BAR */
@@ -24,7 +39,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 0 12px;
 }
 
 .nav__link--list {
@@ -76,6 +91,37 @@ section:nth-child(even) {
     flex: 1;
 }
 
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    width: 0;
+    bottom: -3px;
+    right: 0;
+    transition: all 400ms ease;
+}
+
+.link__hover-effect--white:after {
+    background-color: white;
+}
+
+.link__hover-effect--black:after {
+    background-color: black;
+}
+
+.link__hover-effect:hover:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    width: 100%;
+    bottom: -3px;
+    left: 0;
+    transition: all 400ms ease;
+}
+
+/* ABOUT ME */
 #about-me {
     display: flex;
     flex-direction: column;
@@ -109,6 +155,23 @@ section:nth-child(even) {
     border-radius: 100px;
     box-shadow: 0 4px 18px black;
     margin-bottom: 30px;
+    overflow: hidden;
+    animation: animate-profile-picture 800ms 200ms backwards;
+}
+
+@keyframes animate-profile-picture {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
 }
 
 /* heading1 */
@@ -120,13 +183,19 @@ h1 {
     font-size: 30px;
     margin-bottom: 16px;
     text-align: center;
+    animation: fade-up 700ms 400ms backwards;
 }
 
 /* Introduction paragraph */
 .intro {
     font-size: 16px;
-
     margin: 20px 0;
+    animation: fade-up 700ms 600ms backwards;
+}
+
+.about__me--links {
+    margin-bottom: 60px;
+    animation: fade-up 700ms 600ms backwards;
 }
 
 .about__me--link {
@@ -135,10 +204,25 @@ h1 {
     padding: 0 16px;
 }
 
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
 .about__me--imageCont {
     flex: 1;
     display: flex;
     align-items: center;
+    animation: fade-up 700ms 600ms backwards; 
+
 }
 
 .about__me--image {
@@ -154,16 +238,14 @@ h1 {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 18px;
 }
 
 .container {
     padding: 50px 0;
 }
 
-.about__me--links {
-    margin-bottom: 60px;
-}
+
 
 .language__list {
     display: flex;
@@ -171,6 +253,8 @@ h1 {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+    animation: fade-up 600ms 700ms backwards; 
+
 }
 
 .language__wrapper {
@@ -326,9 +410,24 @@ footer {
     padding-bottom: 20px;
 }
 
-.footer__social--link {
+.footer__social--link,
+.footer__top,
+.footer__copyright {
     color: white;
+
+}
+
+.footer__social--link {
     text-decoration: none;
+}
+
+.footer__top {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 300ms ease;
 }
 
 .footer__copyright {
@@ -336,5 +435,59 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: white;
+}
+
+.footer__href:hover .footer__top {
+    transform: translateX(60px);
+    opacity: 1;
+}
+
+@media(max-width: 768px) {
+    nav {
+        height: 70px;
+    }
+
+    .section__heading {
+        font-size: 26px;
+    }
+
+    .language__item {
+        width: calc(100%/2);
+    }
+
+    .project__item--name {
+        font-size: 26px;
+    }
+
+    .project__item--info {
+        font-size: 13px;
+        padding-right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav__link--list:not(last-child) {
+        display: none;
+    }
+
+    .project__item--desc {
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .project__item--desc {
+        display: none;
+    }
+
+    .project__item--name {
+        font-size: 22px;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .project__item--tech {
+        text-align: center;
+        margin: 12px 0;
+    }
 }
