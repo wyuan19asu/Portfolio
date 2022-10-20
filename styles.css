@@ -221,7 +221,7 @@ h1 {
     flex: 1;
     display: flex;
     align-items: center;
-    animation: fade-up 700ms 600ms backwards; 
+    animation: fade-up 700ms 600ms backwards;
 
 }
 
@@ -245,15 +245,13 @@ h1 {
     padding: 50px 0;
 }
 
-
-
 .language__list {
     display: flex;
     padding: 0 20px;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    animation: fade-up 600ms 700ms backwards; 
+    animation: fade-up 600ms 700ms backwards;
 
 }
 
@@ -300,6 +298,11 @@ h1 {
 }
 
 /* PROJECTS */
+
+.project {
+    margin-bottom: 50px;
+}
+
 .project__image {
     width: 100%;
     transition: all 450ms ease;
